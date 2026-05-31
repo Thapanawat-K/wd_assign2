@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Web development" />
+  <meta name="keywords" content="Assignment 2" />
+  <meta name="author" content="Thapanawat Kittisiddho" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve - Restaurant App</title>
+  <link rel="stylesheet" href="../design/css/style.css" />
+  <script src="../design/js/script.js"></script>
+</head>
+<body>
+
+  <!-- Navr -->
+  <header class="site-header">
+    <div class="header-inner">
+      <span>Navigation</span>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="restaurants.html">Restaurants</a></li>
+        <li><a href="recommend.html">Recommend</a></li>
+        <li><a href="register.html">Sign Up</a></li>
+        <li><a href="reservation.html" class="active">Reserve</a></li>
+        <li><a href="bill.html">Bill</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--banner -->
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Make a Reservation</h1>
+      <p>Lock in your table in a few clicks.</p>
+    </div>
+  </section>
+
+  <!--form -->
+  <section class="content">
+    <form id="resform" class="form" method="post"
+          action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+
+      <fieldset>
+        <legend>Your Details</legend>
+
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input id="fullname" type="text" name="fullname" />
+          <small class="error" id="err-fullname"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" name="email" />
+          <small class="error" id="err-email"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" name="phone" />
+          <small class="error" id="err-phone"></small>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Booking Details</legend>
+
+        <div class="form-group">
+          <label for="restaurant">Restaurant</label>
+          <select id="restaurant" name="restaurant">
+            <option value="">-- Select a restaurant --</option>
+            <option value="dainty">Dainty Sichuan Noodles QV</option>
+            <option value="dodee">DoDee Paidang Swanston</option>
+            <option value="yappari">Yappari Steak Swanston</option>
+            <option value="soi38">Soi 38</option>
+            <option value="gopals">Gopals</option>
+            <option value="udon">Udon Yasan</option>
+          </select>
+          <small class="error" id="err-restaurant"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="datetime">Reservation Date &amp; Time</label>
+          <input id="datetime" type="datetime-local" name="datetime" />
+          <small class="error" id="err-datetime"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="people">Number of People</label>
+          <input id="people" type="number" name="people" min="1" value="2" />
+          <small class="error" id="err-people"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="requests">Special Requests (optional)</label>
+          <textarea id="requests" name="requests" rows="3"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Deposit &amp; Payment</legend>
+
+        <div class="form-group">
+          <label for="deposit">Deposit Amount</label>
+          <input id="deposit" type="text" name="deposit" value="$0" readonly />
+        </div>
+
+        <div class="form-group">
+          <span class="radiolabel">Payment Method</span>
+          <div class="radio-group">
+            <label><input type="radio" name="payment" value="voucher" /> Voucher</label>
+            <label><input type="radio" name="payment" value="card" /> Online Payment (Credit Card)</label>
+          </div>
+          <small class="error" id="err-payment"></small>
+        </div>
+
+        <!-- Voucher field  -->
+        <div class="form-group" id="voucher-group" style="display: none;">
+          <label for="voucher">Voucher Code (12 digits)</label>
+          <input id="voucher" type="text" name="voucher" />
+        </div>
+
+        <!-- Credit card fields  -->
+        <div id="card-group" style="display: none;">
+          <div class="form-group">
+            <label for="cardtype">Card Type</label>
+            <select id="cardtype" name="cardtype">
+              <option value="visa">Visa (16 digits)</option>
+              <option value="mc">Mastercard (16 digits)</option>
+              <option value="amex">American Express (15 digits)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cardnum">Card Number</label>
+            <input id="cardnum" type="text" name="cardnum" />
+            <small class="error" id="err-cardnum"></small>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- billing -->
+      <fieldset>
+        <legend>Billing</legend>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="sameemail" />
+            Same as email address
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="billing">Billing Email Address</label>
+          <input id="billing" type="email" name="billing" />
+          <small class="error" id="err-billing"></small>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <button type="submit" class="btn">Confirm Reservation</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>2026 Unnamed Restaurant App</p>
+  </footer>
+
+</body>
+</html>
